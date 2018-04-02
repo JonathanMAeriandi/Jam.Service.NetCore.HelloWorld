@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
-  deployment:
+  deploy:
     dockerhub:
       branch: master
       commands:
