@@ -1,22 +1,22 @@
 version: 2
-jobs:
-  build:
-    working_directory: /temp
-    docker:
-      - image: microsoft/dotnet:sdk
-    environment:
-      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
-      DOTNET_CLI_TELEMETRY_OPTOUT: 1
-    steps:
-      - checkout
-      - run: dotnet restore
-      - run: dotnet build
 
-  deploy:
-    dockerhub:
-      branch: master
-      commands:
-        - $DOCKER_HUB_BUILD_IMAGE_TRIGGER
+build:
+  working_directory: /temp
+  docker:
+    - image: microsoft/dotnet:sdk
+  environment:
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+    DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  steps:
+    - checkout
+    - run: dotnet restore
+    - run: dotnet build
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - $DOCKER_HUB_BUILD_IMAGE_TRIGGER
 
 workflows:
   version: 2
