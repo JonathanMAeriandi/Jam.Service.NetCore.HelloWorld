@@ -23,7 +23,7 @@
                 "containers": [
                     {
                         "name": "ctn-app-name",
-                        "image": "jmadelaineaeriandi/hello-world:latest",
+                        "image": "jmadelaineaeriandi/jam.service.netcore.helloworld:latest",
                         "ports": [
                             {
                                 "containerPort": 8080

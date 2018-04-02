@@ -16,4 +16,4 @@ EXPOSE 8080
 FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "*.NetCore.*.dll"]
+ENTRYPOINT ["dotnet", "Jam.Service.NetCore.HelloWorld.dll"]
