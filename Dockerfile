@@ -6,7 +6,7 @@ COPY ./src/*/*.csproj ./
 RUN dotnet restore
 
 # copy everything else and build
-COPY ./src/*/ ./
+COPY ./src/*/* ./
 RUN dotnet publish -c Release -o out
 
 EXPOSE 8080
