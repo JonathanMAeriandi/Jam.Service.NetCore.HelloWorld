@@ -11,10 +11,18 @@ jobs:
       - checkout
       - run: dotnet restore
       - run: dotnet build
+
   deploy:
     dockerhub:
       branch: master
       commands:
         - $DOCKER_HUB_BUILD_IMAGE_TRIGGER
 
-      
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+        requires:
+          - build
