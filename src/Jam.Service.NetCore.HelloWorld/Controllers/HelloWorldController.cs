@@ -11,7 +11,7 @@ namespace Jam.Service.NetCore.HelloWorld.Controllers
         {
             var currentTime = DateTime.Now.ToString("HH:mm"); 
 
-            return new OkObjectResult($"Hello, World!\nThe time is {currentTime}");
+            return new OkObjectResult($"Hello, World!\nThe time is {currentTime}!");
         }
     }
 }
